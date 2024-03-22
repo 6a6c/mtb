@@ -194,3 +194,4 @@ def get_std_rat_noex(P, avg):
             #ret += P[i] * (avg) ** 2
         else:
             ret += P[i] * (avg - ( (i % w) / (int(i / w) + i % w) ) ) ** 2
+

@@ -1,3 +1,9 @@
+# This file is old, it creates figures using matplotlib based on ME data.
+# After a while, I stopeed using this and would instead just calculate desired
+# values/statistics (e.g. mean, variance, percentiles) for cell count/plasmid fraction,
+# put those in a CSV, and then make the figs on my home machine. I'd recommend the same
+# as it allows you to more easily edit how your figures look.
+
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
@@ -84,7 +90,7 @@ if __name__ == "__main__":
     for i in range(1,113):
         P = mtb.read_P(width, "data_r.64/day_{:.2f}_P.csv".format(i * .25))
         getall(P, i)
-        plotall(P, i)
+        #plotall(P, i)
 
 
     print(stds)

@@ -17,6 +17,7 @@ import mtb_cuda
 from cupy_ivp import solve_ivp, RK45
 
 import time
+import parser
 
 def deriv(t, y):
     p = A * y
@@ -45,12 +46,15 @@ if __name__ == "__main__":
  
         print(i)
         print(cp.sum(P))
-       
-        #mtb_cuda.store_P(P, "data_det/day_{:.2f}_P.csv".format((i + 1) * .25))
+    
+        # Uncomment and change if you'd like to store intermediary data    
+        #if(i % 4 == 3):
+        #    mtb_cuda.store_P(P, "data_2000_r1.04/day_{:.2f}_P.csv".format((i + 1) * .25))
 
     
     end = time.time()
 
+    print("r value: ", r)
     print("FINAL TIME IN SECONDS: ", end - start)
 
 

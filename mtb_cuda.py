@@ -124,7 +124,7 @@ def get_ratios(p):
     return vals, inds
 
 def store_P(P, fn):
-    df = pd.DataFrame(P)
+    df = pd.DataFrame(P.get())
     print(df)
     df.to_csv(fn)
 
